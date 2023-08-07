@@ -4,7 +4,7 @@ public interface BotConfig {
     /**
      * Your domain must be HTTPS Example: https://haqnazarov.uz
      */
-    String DOMAIN = "https://d78d-84-54-71-15.ngrok-free.app";
+    String DOMAIN = "https://4a22-213-230-86-234.ngrok-free.app";
     /**
      * Your Telegram bot private api token
      */
