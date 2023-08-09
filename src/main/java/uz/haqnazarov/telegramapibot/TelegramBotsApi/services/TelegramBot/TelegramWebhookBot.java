@@ -6,6 +6,5 @@ import uz.haqnazarov.telegramapibot.TelegramBotsApi.services.Execute.ExecuteImpl
 
 public interface TelegramWebhookBot {
     Execute execute = new ExecuteImpl();
-
     void onUpdateReceived(Update update);
 }

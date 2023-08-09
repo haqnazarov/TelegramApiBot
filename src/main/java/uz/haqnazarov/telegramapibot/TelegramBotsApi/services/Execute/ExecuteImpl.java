@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
+import org.telegram.telegrambots.meta.api.methods.groupadministration.GetChatMember;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.methods.send.SendVideo;
@@ -17,6 +18,7 @@ import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageCaption;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import uz.haqnazarov.telegramapibot.TelegramBotsApi.config.BotConfig;
+import uz.haqnazarov.telegramapibot.TelegramBotsApi.response.ChatMember;
 import uz.haqnazarov.telegramapibot.TelegramBotsApi.response.Message;
 
 import java.nio.file.Files;
@@ -139,9 +141,21 @@ public class ExecuteImpl implements Execute {
         return restTemplate.postForObject(BotConfig.API_TELEGRAM + "/editMessageText", editMessageText, Message.class);
     }
 
+    /**
+     * EditMessageCaption
+     */
     @Override
     public Message send(EditMessageCaption editMessageCaption) {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.postForObject(BotConfig.API_TELEGRAM + "/editMessageCaption", editMessageCaption, Message.class);
+    }
+
+    /**
+     * GetChatMember
+     */
+    @Override
+    public ChatMember send(GetChatMember getChatMember) {
+        RestTemplate restTemplate = new RestTemplate();
+       return restTemplate.postForObject(BotConfig.API_TELEGRAM + "/getChatMember", getChatMember, ChatMember.class);
     }
 }

@@ -8,6 +8,6 @@ import uz.haqnazarov.telegramapibot.TelegramBotsApi.services.TelegramBot.Telegra
 public class MyBot implements TelegramWebhookBot {
     @Override
     public void onUpdateReceived(Update update) {
-//        your telegram bot source code
+        //Your Source Code
     }
 }
